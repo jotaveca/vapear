@@ -1,0 +1,90 @@
+<!--
+  Generated template for the OhmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ohmmeter</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+ <ion-list>
+
+  <ion-item>
+    <ion-label class="testclass" stacked>Tipo de alambre a usar:</ion-label>
+    <ion-select [(ngModel)]="alambre_select" #alambre interface="popover">
+        <ion-option value="k">Kantal 24</ion-option>
+        <ion-option value="c">Clapton</ion-option>
+        <ion-option value="n">Niquel</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="testclass" stacked>¿A cuanto Ohmniaje quieres vapear?</ion-label>
+     <ion-select [(ngModel)]="ohm_select" #ohm interface="popover">
+        <ion-option value="0.26">0.26 Ohm</ion-option>
+        <ion-option value="0.27">0.27 Ohm</ion-option>
+        <ion-option value="0.30">0.30 Ohm</ion-option>
+      </ion-select>
+  </ion-item>
+
+</ion-list>
+
+   <br>
+
+      <ion-grid>
+        <ion-row>
+      <ion-col>
+       
+      </ion-col>
+      <ion-col col-auto>
+        <button ion-button full icon-left (click)="calcularOhm()">
+  <ion-icon name="calculator"></ion-icon>Calcular</button>
+      </ion-col>
+      <ion-col>
+       
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+    
+
+    <!--<button ion-button full (click)="calcularOhm()" >Calcular</button> -->
+
+   <div *ngIf="showCard" >
+
+    <ion-card >
+  <ion-card-header>
+    Resultado
+  </ion-card-header>
+  <ion-card-content>  
+
+     <ion-list>
+  <ion-item>Ohm <ion-badge  right color="danger" item-end>{{ohm_salida}} </ion-badge> </ion-item>
+  <ion-item>Vueltas  <ion-badge right item-end>{{vueltas}}</ion-badge> </ion-item>
+  <ion-item>Diámetro <ion-badge  right color="secondary" item-end>{{diametro}}</ion-badge> </ion-item>
+</ion-list>   
+  </ion-card-content>
+</ion-card>
+
+</div>
+
+</ion-content>
+
+<!-- <ion-footer  no-border>
+  <ion-toolbar transparent>    
+    <img src="assets/img/down.png">
+  </ion-toolbar>
+</ion-footer>
+
+-->
+
